@@ -1,5 +1,5 @@
 const newBtn = document.querySelector('#new-btn');
-const saveTxtBtn = document.querySelector('#txt-btn');
+const saveTextButtons = document.querySelectorAll('#txt-btn');
 const savePdfBtn = document.querySelector('#pdf-btn');
 
 const content = document.querySelector('#content');
@@ -28,14 +28,21 @@ newBtn.addEventListener('click', () => {
   content.innerHTML = '';
 });
 
-saveTxtBtn.addEventListener('click', () => {
+const saveText = (fileExtension) => {
   const a = document.createElement('a');
   const blob = new Blob([content.innerText]);
   const dataUrl = URL.createObjectURL(blob);
   a.href = dataUrl;
-  a.download = filename.value + '.txt';
+  a.download = filename.value + fileExtension;
   a.click();
-});
+};
+
+for (const btn of saveTextButtons) {
+  btn.addEventListener('click', () => {
+    const fileExtension = btn.dataset['extension'];
+    saveText(fileExtension);
+  });
+}
 
 savePdfBtn.addEventListener('click', () => {
   // saves to pdf, check htmltopdf.js, pretty neat!
