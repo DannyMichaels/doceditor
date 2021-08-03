@@ -1,36 +1,60 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 #title {
-    padding: 10px 0;
-    border-bottom: 2px solid #ccc;
-    margin-bottom: 10px;
+  padding: 10px 0;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 10px;
 }
 
 .controls {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .main-controls {
-    display: flex;
+  display: flex;
 }
 
 .control-btn-container {
-    display: flex;
+  display: flex;
 }
 
 .control-btn {
-    margin-left: 8px;
-    width: 50px;
-    height: 100%;
+  margin-left: 8px;
+  width: 50px;
+  height: 100%;
 }
 
 #filename-input {
-    margin-left: 10px;
+  margin-left: 10px;
+  height: 50%;
 }
 
 #content {
-    padding: 20px;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
-    outline: none;
-    min-height: 300px;
-    margin: 30px 0;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  outline: none;
+  min-height: 300px;
+  margin: 30px 0;
+}
+
+#tool-list {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  padding: 0;
+  margin: 1rem;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.control-btn {
+  display: block;
+  border: none;
+  padding: 0.5rem;
+  font-size: 20px;
 }
